@@ -1,28 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Periodic Table</title>
-    <!-- Add any additional head elements here (like CSS links) -->
-</head>
-<body>
-    <h1>Periodic Table of Elements</h1>
-    <table>
-        <tr>
-            <th>Atomic Number</th>
-            <th>Symbol</th>
-            <th>Name</th>
-            <th>Atomic Mass</th>
-            <th>Category</th>
-        </tr>
-        {% for element in elements %}
-        <tr>
-            <td>{{ element.atomic_number }}</td>
-            <td>{{ element.symbol }}</td>
-            <td>{{ element.name }}</td>
-            <td>{{ element.atomic_mass }}</td>
-            <td>{{ element.category }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Periodic Table</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <div class="periodic-table">
+            {% for row_index, row in periodic_table %}
+                <div class="periodic-row">
+                    {% for element in row %}
+                        {% if element %}
+                            <div class="element">{{ element }}</div>
+                        {% else %}
+                            <div class="empty-element"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </body>
 </html>

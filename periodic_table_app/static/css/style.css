@@ -1,11 +1,61 @@
-#periodic-table {
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .periodic-table {
     display: grid;
-    grid-template-columns: repeat(18, 1fr);
-    gap: 10px;
-}
-
-.element {
-    border: 1px solid #ddd;
+    grid-template-columns: repeat(18, 1fr); /* Adjust the fraction to control the size */
+    grid-gap: 5px; /* Adjust the gap for spacing */
+    padding: 5px;
+    margin: auto; /* Center the table on the page */
+    max-width: 1200px; /* Maximum width of the table */
+  }
+  
+  .periodic-row {
+    display: contents; /* Ensures that the .periodic-row divs don't affect the grid layout */
+  }
+  
+  .element, .empty-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    aspect-ratio: 1; /* Makes sure that the width and height are always equal */
+    background-color: #FFF;
     padding: 10px;
-    text-align: center;
-}
+    box-sizing: border-box; /* Includes padding and border in the element's size */
+  }
+  
+  /* Adjust the font size and weight */
+  .element {
+    font-weight: bold;
+    font-size: 0.8rem; /* Adjust the font size as needed */
+  }
+  
+  /* Make the empty elements take up space but invisible */
+  .empty-element {
+    visibility: hidden;
+  }
+  
+  /* Add custom styles for specific elements, if needed */
+  .element[data-category="noble-gas"] {
+    background-color: #FFDDC1;
+  }
+  
+
+  
+  
+  /* Add specific styles for element categories */
+  .noble-gas { background-color: #FFDDC1; }
+  .alkali-metal { background-color: #FF6666; } /* Light Red */
+  .alkaline-earth-metal { background-color: #FFDEAD; } /* Light Orange */
+  .lanthanoid { background-color: #9E9E9E; } /* Gray */
+  .actinoid { background-color: #9E9E9E; } /* Gray, often same as lanthanoids */
+  .transition-metal { background-color: #F4C2C2; } /* Pink */
+  .post-transition-metal { background-color: #77DD77; } /* Light Green */
+  .metalloid { background-color: #C9FFE5; } /* Mint */
+  .halogen { background-color: #B2FFFF; } /* Light Cyan */
+  .nonmetal { background-color: #C0C0C0; } /* Silver */
+  .unknown-properties { background-color: #FFFFFF; } /* White for unknown properties */
+
