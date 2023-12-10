@@ -30,7 +30,7 @@ body {
   /* Adjust the font size and weight */
   .element {
     font-weight: bold;
-    font-size: 0.8rem; /* Adjust the font size as needed */
+    font-size: 1.5rem; /* Adjust the font size as needed */
   }
   
   /* Make the empty elements take up space but invisible */
@@ -59,3 +59,13 @@ body {
   .nonmetal { background-color: #C0C0C0; } /* Silver */
   .unknown-properties { background-color: #FFFFFF; } /* White for unknown properties */
 
+
+/* Trying to make it so when I hover mouse over element it highlight it another color */
+.element {
+  /* Existing styles... */
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.element:hover {
+  background-color: #ADD8E6; /* Light blue background on hover, change as desired */
+}
