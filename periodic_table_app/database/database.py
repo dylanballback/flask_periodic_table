@@ -26,3 +26,8 @@ periodic_table = [
     [None, None, None, 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu'],
     [None, None, None, 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm', 'Md', 'No', 'Lr']
 ]
+
+
+elements = get_elements()
+indexed_periodic_table = [(i, row) for i, row in enumerate(periodic_table)]
+print(indexed_periodic_table)
