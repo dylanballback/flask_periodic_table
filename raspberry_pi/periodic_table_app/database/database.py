@@ -31,5 +31,5 @@ periodic_table = [
 
 def get_element_ids():
     elements = get_elements()
-    element_ids = {element['symbol']: element['atomic_number'] for element in elements}
+    element_ids = {element['symbol']: (element['atomic_number'], element['name'], element['atomic_mass']) for element in elements}
     return element_ids

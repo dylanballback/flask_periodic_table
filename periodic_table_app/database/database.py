@@ -1,7 +1,7 @@
 import sqlite3
 
 def get_db_connection():
-    conn = sqlite3.connect('./database/periodic_table.db')
+    conn = sqlite3.connect('./periodic_table_app/database/periodic_table.db')
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -29,7 +29,8 @@ periodic_table = [
 
 
 
+
 def get_element_ids():
     elements = get_elements()
-    element_ids = {element['symbol']: element['atomic_number'] for element in elements}
+    element_ids = {element['symbol']: (element['atomic_number'], element['name'], element['atomic_mass']) for element in elements}
     return element_ids

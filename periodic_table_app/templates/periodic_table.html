@@ -10,9 +10,16 @@
     <div class="periodic-table">
         {% for row_index, row in periodic_table %}
             <div class="periodic-row">
-                {% for element in row %}
-                    {% if element %}
-                        <div class="element" data-id="{{ element_ids[element] }}">{{ element }}</div>
+                {% for element_symbol in row %}
+                    {% if element_symbol %}
+                        {% set element_info = element_ids.get(element_symbol, ('', '', '')) %}
+                        <div class="element" data-id="{{ element_info[0] }}" data-name="{{ element_info[1] }}" data-mass="{{ element_info[2] }}">
+                            <div class="symbol">{{ element_symbol }}</div>
+                            <div class="details">
+                                <div class="name">{{ element_info[1] }}</div>
+                                <div class="mass">{{ element_info[2] }}</div>
+                            </div>
+                        </div>
                     {% else %}
                         <div class="empty-element"></div>
                     {% endif %}
