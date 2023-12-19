@@ -1,25 +1,75 @@
+/* CSS for the Periodic Table */
 .periodic-table {
   display: grid;
-  grid-template-columns: repeat(18, 80px); /* Increase the size of columns */
-  grid-auto-rows: 80px; /* Increase the size of rows */
-  grid-gap: 5px; /* You can adjust the gap if needed */
-  justify-content: center;
-  margin: 20px auto; /* Centers the table with automatic margins on the sides */
+  grid-template-columns: 50px repeat(18, 90px); /* 50px for the row headers, 60px for each element */
+  grid-template-rows: 90px auto; /* 50px for the column headers */
+  gap: 1px; /* Space between cells */
 }
+
+.header {
+  background-color: #fff; /* White background for headers */
+  color: #000; /* Color of the text */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: larger; /* Larger font size for headers */
+  font-weight: bold; /* Bold font weight for headers */
+  border: 1px solid #000; /* Black border for the headers */
+  border: none;
+  height: 90px;
+  width: 90px;
+}
+
+.column-header {
+  display: flex;
+  writing-mode: horizontal-tb; /* Ensures text is horizontal */
+  grid-row: 1; /* Position at the first row */
+  border: none;
+  height: 90px;
+  width: 90px;
+}
+
+.row-header {
+  writing-mode: horizontal-tb; /* Text is horizontal */
+  align-self: start; /* Aligns the content at the start of the grid area */
+  justify-self: stretch; /* Stretches the content to fill the cell */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  font-size: larger; /* Increase font size if necessary */
+  font-weight: bold; /* Bold font for headers */
+  height: 90px; /* Match the row height */
+  width: 90px;
+  background-color: #fff; /* White background */
+  border: none; /* Border to match the element cells */
+}
+
+.empty-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: center;
+  background-color: #fff; /* White background for elements */
+  border: none;
+}
+
 
 .element {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   border: 1px solid #000;
-  min-width: 80px; /* New minimum width */
-  min-height: 80px; /* New minimum height */
-  padding: 5px;
-  box-sizing: border-box;
-  word-wrap: break-word;
   overflow: hidden;
+  word-wrap: break-word;
+  text-align: center;
+  background-color: #fff; /* White background for elements */
 }
+
 
 .periodic-row {
   display: contents; /* This will make sure the row doesn't affect the grid layout */
@@ -27,12 +77,12 @@
 
 
 .symbol {
-  font-size: 1.4rem; /* You might need to adjust this depending on your content */
+  font-size: 2rem; /* You might need to adjust this depending on your content */
   margin-bottom: 0.5rem;
 }
 
 .name, .mass {
-  font-size: 0.8rem; /* Adjust the font size so that the text fits */
+  font-size: 0.9rem; /* Adjust the font size so that the text fits */
   text-align: center; /* Center the text horizontally */
 }
 
